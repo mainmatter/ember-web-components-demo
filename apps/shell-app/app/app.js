@@ -5,6 +5,8 @@ import loadInitializers from 'ember-load-initializers';
 import config from 'shell-app/config/environment';
 import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
 
+import 'app-webcomponent/web-component';
+
 if (macroCondition(isDevelopingApp())) {
   importSync('./deprecation-workflow');
 }

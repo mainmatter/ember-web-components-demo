@@ -11,6 +11,7 @@
     "test": "tests"
   },
   "scripts": {
+    "prepare": "pnpm build",
     "build": "vite build",
     "format": "prettier . --cache --write",
     "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
@@ -26,6 +27,7 @@
     "test": "vite build --mode development && testem ci"
   },
   "exports": {
+    "./web-component": "./dist/app.js",
     "./tests/*": "./tests/*",
     "./*": "./app/*"
   },

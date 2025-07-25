@@ -4,7 +4,16 @@ import { babel } from '@rollup/plugin-babel';
 
 export default defineConfig({
   build: {
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        // this is to prevent fingerprinting the app.js
+        entryFileNames: '[name].js'
+      },
+      input: {
+        app: 'app/app.js'
+      }
+    }
   },
   plugins: [
     ember(),

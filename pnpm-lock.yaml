@@ -64,6 +64,9 @@ importers:
       '@warp-drive/ember':
         specifier: ~5.5.0
         version: 5.5.0(@ember-data/request-utils@5.5.0(@ember-data/request@5.5.0(@ember/test-waiters@4.1.1)(@warp-drive/core-types@5.5.0))(@ember/string@4.0.1)(@warp-drive/core-types@5.5.0))(@ember-data/request@5.5.0(@ember/test-waiters@4.1.1)(@warp-drive/core-types@5.5.0))(@ember-data/store@5.5.0(@ember-data/request-utils@5.5.0(@ember-data/request@5.5.0(@ember/test-waiters@4.1.1)(@warp-drive/core-types@5.5.0))(@ember/string@4.0.1)(@warp-drive/core-types@5.5.0))(@ember-data/request@5.5.0(@ember/test-waiters@4.1.1)(@warp-drive/core-types@5.5.0))(@ember-data/tracking@5.5.0(@warp-drive/core-types@5.5.0)(ember-source@6.5.0(@glimmer/component@2.0.0)(rsvp@4.8.5)))(@warp-drive/core-types@5.5.0)(ember-source@6.5.0(@glimmer/component@2.0.0)(rsvp@4.8.5)))(@ember/test-waiters@4.1.1)(@warp-drive/core-types@5.5.0)(ember-source@6.5.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
+      app-webcomponent:
+        specifier: workspace:*
+        version: link:../../packages/app-webcomponent
       babel-plugin-ember-template-compilation:
         specifier: ^2.4.1
         version: 2.4.1
@@ -106,9 +109,6 @@ importers:
       ember-template-lint:
         specifier: ^7.7.0
         version: 7.9.1
-      ember-welcome-page:
-        specifier: ^7.0.2
-        version: 7.0.2
       eslint:
         specifier: ^9.27.0
         version: 9.31.0
