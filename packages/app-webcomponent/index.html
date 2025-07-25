@@ -11,10 +11,18 @@
   <body>
     <script src="/@embroider/virtual/vendor.js"></script>
     <script type="module">
-      import Application from './app/app';
-      import environment from './app/config/environment';
 
-      Application.create(environment.APP);
+
+
+      // this becomes the "entrypoint" of the application
+      // wrapping this in a "custom element" is the right way to go
+      // and Application.create effectively autoboots the
+      import './app/app';
+      // import environment from './app/config/environment';
+
+      // Application.create(environment.APP);
     </script>
+
+    <app-webcomponent />
   </body>
 </html>

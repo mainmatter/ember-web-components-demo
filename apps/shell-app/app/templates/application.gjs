@@ -1,12 +1,11 @@
 import { pageTitle } from 'ember-page-title';
-import { WelcomePage } from 'ember-welcome-page';
 
 <template>
   {{pageTitle "ShellApp"}}
-  
+
   {{outlet}}
 
-  {{! The following component displays Ember's default welcome message. }}
-  <WelcomePage />
-  {{! Feel free to remove this! }}
+  <h1>This isn't our welcome-page, it's a webcomponent</h1>
+
+  <app-webcomponent />
 </template>
