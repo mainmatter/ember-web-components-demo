@@ -21,7 +21,12 @@ export function wrapApp(
         shadow.appendChild(style);
       }
 
-      App.create(options.appConfig ?? {});
+      const appConfig = {
+        rootElement,
+        ...(options.appConfig ?? {}),
+      };
+
+      App.create(appConfig);
 
       shadow.append(rootElement);
     }
