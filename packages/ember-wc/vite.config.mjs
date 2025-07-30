@@ -9,7 +9,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '@ember/wc',
+        find: '@ember/webcomponent',
         replacement: `${__dirname}/src`,
       },
     ],

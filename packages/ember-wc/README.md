@@ -1,4 +1,4 @@
-# @ember/wc
+# @ember/webcomponent
 
 [Short description of the addon.]
 
@@ -10,7 +10,7 @@
 ## Installation
 
 ```
-ember install @ember/wc
+ember install @ember/webcomponent
 ```
 
 ## Usage

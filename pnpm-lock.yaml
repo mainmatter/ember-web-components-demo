@@ -181,7 +181,7 @@ importers:
       '@ember/test-waiters':
         specifier: ^4.1.0
         version: 4.1.1(@glint/template@1.6.0-alpha.2)
-      '@ember/wc':
+      '@ember/webcomponent':
         specifier: workspace:*
         version: link:../ember-wc
       '@embroider/compat':
