@@ -3,31 +3,20 @@ import compatModules from '@embroider/virtual/compat-modules';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from 'app-webcomponent/config/environment';
+import { wrapApp } from '@ember/webcomponent';
 
-import appStyles from './app.css?inline';
+import styles from './app.css?inline';
 
-export default class EmberWebComponent extends HTMLElement {
-  connectedCallback() {
-    const shadow = this.attachShadow({ mode: "open" });
-    const rootElement = document.createElement("body");
-
-    const style = document.createElement("style");
-    style.textContent = appStyles;
-    shadow.appendChild(style);
-
-    class App extends Application {
-      rootElement = rootElement;
-      modulePrefix = config.modulePrefix;
-      podModulePrefix = config.podModulePrefix;
-      Resolver = Resolver.withModules(compatModules);
-    }
-
-    loadInitializers(App, config.modulePrefix, compatModules);
-
-    App.create(config.APP);
-
-    shadow.append(rootElement);
-  }
+class App extends Application {
+  modulePrefix = config.modulePrefix;
+  podModulePrefix = config.podModulePrefix;
+  Resolver = Resolver.withModules(compatModules);
 }
 
-customElements.define("app-webcomponent", EmberWebComponent);
+loadInitializers(App, config.modulePrefix, compatModules);
+
+export default wrapApp(App, {
+  tagName: 'app-webcomponent',
+  styles,
+  appConfig: config.APP,
+});
