@@ -21,7 +21,9 @@ export function wrapApp(
        * it was a decent thing for an application wrapped in a web-component to have it's own body,
        * and nobody seemed to be telling us it was a bad idea so 🤷
        */
-      const rootElement = document.createElement(options.rootElementTag ?? 'body');
+      const rootElement = document.createElement(
+        options.rootElementTag ?? 'body',
+      );
 
       if (options.styles) {
         const style = document.createElement('style');
