@@ -11,7 +11,7 @@ export default defineConfig({
         entryFileNames: '[name].js',
       },
       input: {
-        app: 'app/app.js',
+        'web-component': 'web-component.js',
       },
     },
   },
