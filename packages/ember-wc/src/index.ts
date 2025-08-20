@@ -3,6 +3,7 @@ import type Application from '@ember/application';
 export interface WrapAppOptions {
   tagName?: string;
   styles?: string;
+  rootElementTag?: string;
   appConfig?: unknown;
 }
 
@@ -13,7 +14,14 @@ export function wrapApp(
   class WrappedAppElement extends HTMLElement {
     connectedCallback() {
       const shadow = this.attachShadow({ mode: 'open' });
-      const rootElement = document.createElement('body');
+
+      /**
+       * We originally defaulted to body here because we were testing with the ember-welcome-page and it
+       * had specific css targeting the body. The more we experimented and thought about it we thought
+       * it was a decent thing for an application wrapped in a web-component to have it's own body,
+       * and nobody seemed to be telling us it was a bad idea so 🤷
+       */
+      const rootElement = document.createElement(options.rootElementTag ?? 'body');
 
       if (options.styles) {
         const style = document.createElement('style');
@@ -22,10 +30,9 @@ export function wrapApp(
       }
 
       const appConfig = {
-        rootElement,
         ...(options.appConfig ?? {}),
+        rootElement,
       };
-
       App.create(appConfig);
 
       shadow.append(rootElement);

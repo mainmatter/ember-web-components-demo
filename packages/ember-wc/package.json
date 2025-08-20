@@ -1,5 +1,6 @@
 {
   "name": "@ember/webcomponent",
+  "private": true,
   "version": "0.0.0",
   "description": "The default blueprint for Embroider v2 addons.",
   "keywords": [
