@@ -1,13 +1,10 @@
-
 import { assert } from '@ember/debug';
 
 const config = {
   modulePrefix: 'app-webcomponent',
   locationType: 'none',
   rootURL: '/',
-  APP: {
-
-  }
+  APP: {},
 };
 
 assert(
