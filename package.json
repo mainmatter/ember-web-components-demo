@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "pnpm run --recursive test",
+    "lint": "pnpm run --recursive --parallel lint",
+    "lint:fix": "pnpm run --recursive --parallel lint:fix"
   },
   "keywords": [],
   "author": "",
