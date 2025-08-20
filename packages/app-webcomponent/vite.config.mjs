@@ -8,12 +8,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // this is to prevent fingerprinting the app.js
-        entryFileNames: '[name].js'
+        entryFileNames: '[name].js',
       },
       input: {
-        app: 'app/app.js'
-      }
-    }
+        app: 'app/app.js',
+      },
+    },
   },
   plugins: [
     ember(),
