@@ -27,7 +27,7 @@
     "test": "vite build --mode development && testem ci"
   },
   "exports": {
-    "./web-component": "./dist/app.js",
+    "./web-component": "./dist/web-component.js",
     "./tests/*": "./tests/*",
     "./*": "./app/*"
   },
