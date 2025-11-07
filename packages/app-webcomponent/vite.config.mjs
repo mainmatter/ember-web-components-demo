@@ -8,12 +8,18 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // this is to prevent fingerprinting the app.js
-        entryFileNames: '[name].js'
+        entryFileNames: '[name].js',
       },
       input: {
-        app: 'app/app.js'
-      }
-    }
+        'web-component': 'web-component.js',
+        /**
+         * usually you would have this be conditional based on the mode that you're running in but I couldn't
+         * find a way to access the mode early enough here. I reasoned that it was probably good enough to
+         * always include 👍
+         */
+        tests: 'tests/index.html',
+      },
+    },
   },
   plugins: [
     ember(),
