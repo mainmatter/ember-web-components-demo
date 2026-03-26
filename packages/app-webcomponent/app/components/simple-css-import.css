@@ -1,0 +1,7 @@
+section.coming-from-imported-css {
+  background-color: blue;
+}
+
+section.coming-from-imported-css h1 {
+  color: red;
+}

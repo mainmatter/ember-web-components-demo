@@ -2,7 +2,7 @@ import type Application from '@ember/application';
 
 export interface WrapAppOptions {
   tagName?: string;
-  styles?: string;
+  styleUrls?: string[];
   rootElementTag?: string;
   appConfig?: unknown;
 }
@@ -25,9 +25,10 @@ export function wrapApp(
         options.rootElementTag ?? 'body',
       );
 
-      if (options.styles) {
-        const style = document.createElement('style');
-        style.textContent = options.styles;
+      for(const styleUrl of options.styleUrls || []) {
+        const style = document.createElement('link');
+        style.rel = 'stylesheet';
+        style.href = `/${styleUrl}`;
         shadow.appendChild(style);
       }
 
