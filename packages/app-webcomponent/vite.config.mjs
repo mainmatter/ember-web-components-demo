@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { extensions, ember } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
+import { shadowStyle } from './plugin.js';
 
 export default defineConfig({
   build: {
@@ -18,7 +19,9 @@ export default defineConfig({
          * always include 👍
          */
         tests: 'tests/index.html',
+        index: 'index.html',
       },
+      plugins: [shadowStyle()],
     },
   },
   plugins: [
