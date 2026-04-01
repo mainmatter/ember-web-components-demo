@@ -53,7 +53,6 @@
     "@types/qunit": "^2.19.12",
     "babel-plugin-ember-template-compilation": "^2.2.5",
     "concurrently": "^9.0.1",
-    "decorator-transforms": "^2.2.2",
     "ember-qunit": "^9.0.2",
     "ember-resolver": "^13.1.0",
     "ember-source": "^6.3.0",
