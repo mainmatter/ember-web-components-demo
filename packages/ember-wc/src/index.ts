@@ -26,9 +26,9 @@ export function wrapApp(
       );
 
       if (options.styles) {
-        const style = document.createElement('style');
-        style.textContent = options.styles;
-        shadow.appendChild(style);
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync(options.styles);
+        shadow.adoptedStyleSheets.push(sheet);
       }
 
       const appConfig = {
