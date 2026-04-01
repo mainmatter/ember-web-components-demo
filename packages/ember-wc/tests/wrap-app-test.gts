@@ -14,7 +14,11 @@ class App extends Application {
   modulePrefix = 'test-app';
   Resolver = Resolver.withModules({
     'test-app/router': { default: Router },
-    'test-app/templates/application': { default: <template>TEST</template> },
+    'test-app/templates/application': {
+      default: <template>
+        <div class="main">TEST</div>
+      </template>,
+    },
   });
 }
 
@@ -50,5 +54,23 @@ module('Unit | wrapApp', function () {
 
     const shadowRoot = testingEl.querySelector('test-app')?.shadowRoot;
     assert.dom('*', shadowRoot).hasText('TEST');
+  });
+
+  test('it applies provided inline styles', async function (assert) {
+    wrapApp(App, {
+      tagName: 'styled-test-app',
+      styles: `.main { font-style: italic }`,
+    });
+
+    const testingEl = document.getElementById('ember-testing')!;
+    testingEl.innerHTML = '<styled-test-app />';
+
+    await settled();
+
+    const shadowRoot = testingEl.querySelector('styled-test-app')?.shadowRoot;
+
+    assert.dom('.main', shadowRoot).hasStyle({
+      'font-style': 'italic',
+    });
   });
 });
