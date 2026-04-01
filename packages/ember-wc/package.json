@@ -3,14 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "description": "The default blueprint for Embroider v2 addons.",
-  "keywords": [
-    "ember-addon"
-  ],
+  "keywords": [],
   "repository": "",
   "license": "MIT",
   "author": "",
   "files": [
-    "addon-main.cjs",
     "declarations",
     "dist"
   ],
@@ -74,11 +71,6 @@
   },
   "ember": {
     "edition": "octane"
-  },
-  "ember-addon": {
-    "version": 2,
-    "type": "addon",
-    "main": "addon-main.cjs"
   },
   "imports": {
     "#src/*": "./src/*"
