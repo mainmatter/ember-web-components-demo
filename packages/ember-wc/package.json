@@ -3,14 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "description": "The default blueprint for Embroider v2 addons.",
-  "keywords": [
-    "ember-addon"
-  ],
+  "keywords": [],
   "repository": "",
   "license": "MIT",
   "author": "",
   "files": [
-    "addon-main.cjs",
     "declarations",
     "dist"
   ],
@@ -20,9 +17,7 @@
     "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
     "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" --prefixColors auto && pnpm run format",
     "lint:format": "prettier . --cache --check",
-    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
     "lint:js": "eslint . --cache",
-    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
     "start": "vite dev",
@@ -30,10 +25,7 @@
     "prepack": "rollup --config",
     "prepare": "pnpm build"
   },
-  "dependencies": {
-    "@embroider/addon-shim": "^1.8.9",
-    "decorator-transforms": "^2.2.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
@@ -61,7 +53,6 @@
     "ember-qunit": "^9.0.2",
     "ember-resolver": "^13.1.0",
     "ember-source": "^6.3.0",
-    "ember-template-lint": "^7.9.0",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-ember": "^12.3.3",
@@ -80,11 +71,6 @@
   },
   "ember": {
     "edition": "octane"
-  },
-  "ember-addon": {
-    "version": 2,
-    "type": "addon",
-    "main": "addon-main.cjs"
   },
   "imports": {
     "#src/*": "./src/*"
